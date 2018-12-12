@@ -14,16 +14,22 @@ class UserAnalyticsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let rightButtonItem = UIBarButtonItem.init(
+            title: "Signout",
+            style: .done,
+            target: self,
+            action: #selector(logOutUser(sender:))
+        )
+        
+        self.navigationItem.rightBarButtonItem = rightButtonItem
     }
     
-
-    @IBAction func SignOutUser(_ sender: Any) {
-        
+    @objc func logOutUser(sender:UIBarButtonItem){
         GIDSignIn.sharedInstance()?.signOut()
         dismiss(animated: true, completion: nil)
-        
     }
+
+
     /*
     // MARK: - Navigation
 

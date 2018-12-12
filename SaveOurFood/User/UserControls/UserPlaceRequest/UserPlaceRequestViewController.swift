@@ -16,19 +16,6 @@ class UserPlaceRequestViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     
-        let rightButtonItem = UIBarButtonItem.init(
-            title: "Signout",
-            style: .done,
-            target: self,
-            action: #selector(logOutUser(sender:))
-        )
-        
-        self.navigationItem.rightBarButtonItem = rightButtonItem
-    }
-    
-    @objc func logOutUser(sender:UIBarButtonItem){
-        GIDSignIn.sharedInstance()?.signOut()
-        dismiss(animated: true, completion: nil)
     }
     
     /*
