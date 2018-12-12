@@ -11,6 +11,10 @@
 		7B1AD69E81AFB5D4090B582F /* Pods_SaveOurFoodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F8F2FB67D96E32132A0783 /* Pods_SaveOurFoodUITests.framework */; };
 		D6C1FB7388EABA41C584A17C /* Pods_SaveOurFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE9002B86A3318E4D14EF35 /* Pods_SaveOurFood.framework */; };
 		E2AF90C321C0CCF9002BCC8A /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF90C221C0CCF9002BCC8A /* UserLoginViewController.swift */; };
+		E2AF90C921C0EA4F002BCC8A /* UserPlaceRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF90C821C0EA4F002BCC8A /* UserPlaceRequestViewController.swift */; };
+		E2AF90CB21C0ED9C002BCC8A /* UserAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF90CA21C0ED9C002BCC8A /* UserAnalyticsViewController.swift */; };
+		E2AF90CD21C178EF002BCC8A /* UserStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF90CC21C178EF002BCC8A /* UserStatusViewController.swift */; };
+		E2AF90CF21C17941002BCC8A /* UserAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF90CE21C17941002BCC8A /* UserAccountsViewController.swift */; };
 		E2C3DA7A21BF875A0064648E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3DA7921BF875A0064648E /* AppDelegate.swift */; };
 		E2C3DA7C21BF875A0064648E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3DA7B21BF875A0064648E /* ViewController.swift */; };
 		E2C3DA7F21BF875A0064648E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C3DA7D21BF875A0064648E /* Main.storyboard */; };
@@ -48,6 +52,10 @@
 		8BC4CC429D95A7F7F484CD55 /* Pods-SaveOurFoodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveOurFoodTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveOurFoodTests/Pods-SaveOurFoodTests.release.xcconfig"; sourceTree = "<group>"; };
 		C79904DDA12A7D28785A14FA /* Pods-SaveOurFoodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveOurFoodTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaveOurFoodTests/Pods-SaveOurFoodTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2AF90C221C0CCF9002BCC8A /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
+		E2AF90C821C0EA4F002BCC8A /* UserPlaceRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlaceRequestViewController.swift; sourceTree = "<group>"; };
+		E2AF90CA21C0ED9C002BCC8A /* UserAnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAnalyticsViewController.swift; sourceTree = "<group>"; };
+		E2AF90CC21C178EF002BCC8A /* UserStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatusViewController.swift; sourceTree = "<group>"; };
+		E2AF90CE21C17941002BCC8A /* UserAccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountsViewController.swift; sourceTree = "<group>"; };
 		E2C3DA7621BF875A0064648E /* SaveOurFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveOurFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C3DA7921BF875A0064648E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C3DA7B21BF875A0064648E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +119,26 @@
 			path = UserLogin;
 			sourceTree = "<group>";
 		};
+		E2AF90C421C0E386002BCC8A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				E2AF90C121C0CCCE002BCC8A /* UserLogin */,
+				E2AF90C521C0E3A3002BCC8A /* UserControls */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		E2AF90C521C0E3A3002BCC8A /* UserControls */ = {
+			isa = PBXGroup;
+			children = (
+				E2AF90C821C0EA4F002BCC8A /* UserPlaceRequestViewController.swift */,
+				E2AF90CA21C0ED9C002BCC8A /* UserAnalyticsViewController.swift */,
+				E2AF90CC21C178EF002BCC8A /* UserStatusViewController.swift */,
+				E2AF90CE21C17941002BCC8A /* UserAccountsViewController.swift */,
+			);
+			path = UserControls;
+			sourceTree = "<group>";
+		};
 		E2C3DA6D21BF875A0064648E = {
 			isa = PBXGroup;
 			children = (
@@ -136,7 +164,7 @@
 		E2C3DA7821BF875A0064648E /* SaveOurFood */ = {
 			isa = PBXGroup;
 			children = (
-				E2AF90C121C0CCCE002BCC8A /* UserLogin */,
+				E2AF90C421C0E386002BCC8A /* User */,
 				E2C3DAA721BF8CB50064648E /* GoogleService-Info.plist */,
 				E2C3DA7921BF875A0064648E /* AppDelegate.swift */,
 				E2C3DA7B21BF875A0064648E /* ViewController.swift */,
@@ -437,6 +465,10 @@
 			files = (
 				E2AF90C321C0CCF9002BCC8A /* UserLoginViewController.swift in Sources */,
 				E2C3DA7C21BF875A0064648E /* ViewController.swift in Sources */,
+				E2AF90CB21C0ED9C002BCC8A /* UserAnalyticsViewController.swift in Sources */,
+				E2AF90C921C0EA4F002BCC8A /* UserPlaceRequestViewController.swift in Sources */,
+				E2AF90CD21C178EF002BCC8A /* UserStatusViewController.swift in Sources */,
+				E2AF90CF21C17941002BCC8A /* UserAccountsViewController.swift in Sources */,
 				E2C3DA7A21BF875A0064648E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

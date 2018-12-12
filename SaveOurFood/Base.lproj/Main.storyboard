@@ -71,23 +71,48 @@
         <!--Analytics-->
         <scene sceneID="bis-3P-k2d">
             <objects>
-                <viewController id="jbM-mN-TZW" sceneMemberID="viewController">
+                <viewController id="jbM-mN-TZW" customClass="UserAnalyticsViewController" customModule="SaveOurFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ytn-NI-ver">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0K9-xA-cjc">
+                                <rect key="frame" x="326" y="41" width="53" height="30"/>
+                                <state key="normal" title="Signout"/>
+                                <connections>
+                                    <action selector="SignOutUser:" destination="jbM-mN-TZW" eventType="touchUpInside" id="zg5-KR-K33"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Analytics" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XxG-l4-yfx">
+                                <rect key="frame" x="155" y="36" width="104" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Q6e-Kq-Iv9" firstAttribute="bottom" secondItem="0K9-xA-cjc" secondAttribute="bottom" constant="616" id="6wv-Ue-ZDy"/>
+                            <constraint firstItem="XxG-l4-yfx" firstAttribute="leading" secondItem="Q6e-Kq-Iv9" secondAttribute="leading" constant="155" id="C6X-Cj-iaV"/>
+                            <constraint firstItem="0K9-xA-cjc" firstAttribute="leading" secondItem="XxG-l4-yfx" secondAttribute="trailing" constant="67" id="Ev7-Ka-H0i"/>
+                            <constraint firstItem="0K9-xA-cjc" firstAttribute="leading" secondItem="Q6e-Kq-Iv9" secondAttribute="leading" constant="326" id="TM8-Oi-nFh"/>
+                            <constraint firstItem="0K9-xA-cjc" firstAttribute="top" secondItem="Q6e-Kq-Iv9" secondAttribute="top" constant="21" id="ULv-5T-Y3g"/>
+                            <constraint firstItem="Q6e-Kq-Iv9" firstAttribute="trailing" secondItem="0K9-xA-cjc" secondAttribute="trailing" constant="35" id="dkO-1B-k0g"/>
+                            <constraint firstItem="XxG-l4-yfx" firstAttribute="centerX" secondItem="Q6e-Kq-Iv9" secondAttribute="centerX" id="qVD-8N-lTk"/>
+                            <constraint firstItem="XxG-l4-yfx" firstAttribute="top" secondItem="Q6e-Kq-Iv9" secondAttribute="top" constant="16" id="xZK-OE-swV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Q6e-Kq-Iv9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Analytics" id="E4R-Ft-P8O"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mh5-M1-bIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="726" y="-435"/>
+            <point key="canvasLocation" x="724.63768115942037" y="-435.32608695652175"/>
         </scene>
         <!--Account-->
         <scene sceneID="4Hd-qV-oey">
             <objects>
-                <viewController id="9Fm-WW-ER6" sceneMemberID="viewController">
+                <viewController id="9Fm-WW-ER6" customClass="UserAccountsViewController" customModule="SaveOurFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hZC-uI-qN3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -329,14 +354,16 @@
         <!--Status-->
         <scene sceneID="myZ-MJ-DR3">
             <objects>
-                <viewController id="Y0d-MI-Z2A" sceneMemberID="viewController">
+                <viewController id="Y0d-MI-Z2A" customClass="UserStatusViewController" customModule="SaveOurFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="crF-E4-3XN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="n4P-xW-bYH"/>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Status" id="yD9-MC-0Nz"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KyE-Hx-0XU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -345,7 +372,7 @@
         <!--Pickup Request-->
         <scene sceneID="CS4-Pi-rl8">
             <objects>
-                <viewController id="5RL-gw-BFC" sceneMemberID="viewController">
+                <viewController id="5RL-gw-BFC" customClass="UserPlaceRequestViewController" customModule="SaveOurFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oth-Wn-Ttp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -353,10 +380,14 @@
                         <viewLayoutGuide key="safeArea" id="oNv-5p-x88"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pickup Request" id="cwN-rI-i5C"/>
+                    <connections>
+                        <segue destination="OiU-Zf-f8y" kind="unwind" identifier="unwindUser" unwindAction="SignoutUserWithSegue:" id="qvr-GC-yLT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2LQ-76-EqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OiU-Zf-f8y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3172" y="-1885"/>
+            <point key="canvasLocation" x="3170" y="-1885"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jPI-Hf-3nH">
@@ -467,46 +498,47 @@
             </objects>
             <point key="canvasLocation" x="916" y="1255"/>
         </scene>
-        <!--View Controller-->
+        <!--User Login View Controller-->
         <scene sceneID="dru-In-Mxp">
             <objects>
-                <viewController id="hrD-00-KcT" sceneMemberID="viewController">
+                <viewController id="hrD-00-KcT" customClass="UserLoginViewController" customModule="SaveOurFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UEi-TX-Hch">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cSi-4L-0RU">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cSi-4L-0RU">
                                 <rect key="frame" x="66" y="215" width="282" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vaR-vY-YOE">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vaR-vY-YOE">
                                 <rect key="frame" x="66" y="305" width="282" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5n-FT-a64">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5n-FT-a64">
                                 <rect key="frame" x="117" y="402" width="178" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="NIn-0Y-Hpb" kind="popoverPresentation" popoverAnchorView="W5n-FT-a64" id="1qe-AL-W1i">
+                                    <segue destination="NIn-0Y-Hpb" kind="popoverPresentation" identifier="emailSignIn" popoverAnchorView="W5n-FT-a64" id="1qe-AL-W1i">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8P-lG-B21">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8P-lG-B21">
                                 <rect key="frame" x="118" y="492" width="178" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Login with Google">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="NIn-0Y-Hpb" kind="popoverPresentation" popoverAnchorView="R8P-lG-B21" id="iGm-FW-O0p">
+                                    <action selector="googleSignIn:" destination="hrD-00-KcT" eventType="touchUpInside" id="6Gf-wu-VrQ"/>
+                                    <segue destination="NIn-0Y-Hpb" kind="popoverPresentation" identifier="googleSignIn" popoverAnchorView="R8P-lG-B21" id="iGm-FW-O0p">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -533,16 +565,19 @@
                             <constraint firstItem="ytF-p6-nQc" firstAttribute="trailing" secondItem="vaR-vY-YOE" secondAttribute="trailing" constant="66" id="QMV-ql-wdG"/>
                             <constraint firstItem="bs6-WA-lt6" firstAttribute="top" secondItem="ytF-p6-nQc" secondAttribute="top" constant="39" id="Sx9-Qs-bf8"/>
                             <constraint firstItem="ytF-p6-nQc" firstAttribute="trailing" secondItem="bs6-WA-lt6" secondAttribute="trailing" constant="105" id="T0j-bq-PMp"/>
-                            <constraint firstItem="ytF-p6-nQc" firstAttribute="bottom" secondItem="R8P-lG-B21" secondAttribute="bottom" constant="96" id="TU7-5K-il8"/>
                             <constraint firstItem="cSi-4L-0RU" firstAttribute="leading" secondItem="ytF-p6-nQc" secondAttribute="leading" constant="66" id="TtK-x6-C5A"/>
                             <constraint firstItem="vaR-vY-YOE" firstAttribute="leading" secondItem="ytF-p6-nQc" secondAttribute="leading" constant="66" id="WUv-Rp-4ba"/>
                             <constraint firstItem="vaR-vY-YOE" firstAttribute="top" secondItem="cSi-4L-0RU" secondAttribute="bottom" constant="60" id="ahd-LO-GQ1"/>
                             <constraint firstItem="cSi-4L-0RU" firstAttribute="top" secondItem="ytF-p6-nQc" secondAttribute="top" constant="313" id="cyg-V5-njd"/>
                             <constraint firstItem="R8P-lG-B21" firstAttribute="top" secondItem="W5n-FT-a64" secondAttribute="bottom" constant="60" id="dZv-is-uJ2"/>
                             <constraint firstItem="ytF-p6-nQc" firstAttribute="trailing" secondItem="cSi-4L-0RU" secondAttribute="trailing" constant="66" id="uFD-2x-BcW"/>
+                            <constraint firstItem="ytF-p6-nQc" firstAttribute="bottom" secondItem="R8P-lG-B21" secondAttribute="bottom" constant="214" id="uSy-sC-kDG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ytF-p6-nQc"/>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="W5n-FT-a64" id="MYZ-DA-NER"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dgb-cW-cAI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -643,11 +678,11 @@
             </objects>
             <point key="canvasLocation" x="2319" y="-1169"/>
         </scene>
-        <!--Item-->
+        <!--My Account-->
         <scene sceneID="iLP-9a-F3l">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="769-Zy-rTT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gBa-vA-TcY"/>
+                    <tabBarItem key="tabBarItem" title="My Account" id="gBa-vA-TcY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OAv-8w-NRJ">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -664,6 +699,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1qe-AL-W1i"/>
+        <segue reference="iGm-FW-O0p"/>
     </inferredMetricsTieBreakers>
 </document>
