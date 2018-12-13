@@ -9,13 +9,21 @@
 import UIKit
 import GoogleSignIn
 
-class UserPlaceRequestViewController: UIViewController {
+class UserPlaceRequestViewController: UIViewController{//, UITableViewDataSource, UITableViewDelegate {
 
+    
+    
+    @IBOutlet weak var itemsTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-    
+        
+//        foodItem = ["cooked vegetable","raw vegetale","cooked meat","uncooked meat","cooked poultry","uncooked poultry","left over eggs"]
+        
+        
+        
     }
     
     /*
@@ -27,5 +35,26 @@ class UserPlaceRequestViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//
+//
+//    }
+//
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//    }
+//
+//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//
+//
+//    }
+    
 
 }

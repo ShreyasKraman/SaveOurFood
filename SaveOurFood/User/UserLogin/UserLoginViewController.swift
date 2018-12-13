@@ -19,9 +19,8 @@ class UserLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
             return
         }
         
-        //if success display the email on label
-        
         guard let authentication = user.authentication else { return }
+        
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
         
@@ -30,8 +29,6 @@ class UserLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
                 print(error)
                 return
             }
-            
-            self.performSegue(withIdentifier: "googleSignIn", sender: self)
             
         }
         
@@ -46,10 +43,11 @@ class UserLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         // Do any additional setup after loading the view.
     }
     
-
-    @IBAction func googleSignIn(_ sender: Any) {
-        GIDSignIn.sharedInstance()?.signIn()
-        
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "UserPlaceRequest"{
+            GIDSignIn.sharedInstance()?.signIn()
+        }
     }
     /*
     // MARK: - Navigation
