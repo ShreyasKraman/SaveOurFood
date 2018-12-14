@@ -10,9 +10,9 @@ import UIKit
 
 class FoodItems{
     var itemName:String?
-    var itemImage:String?
+    var itemImage:UIImage?
     
-    init(name:String,image:String){
+    init(name:String,image:UIImage){
         itemName = name
         itemImage = image
     }
@@ -21,7 +21,7 @@ class FoodItems{
         return self.itemName!
     }
     
-    func getImage()->String{
+    func getImage()->UIImage{
         return self.itemImage!
     }
     

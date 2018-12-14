@@ -12,6 +12,8 @@ class SelectItemsViewController: UIViewController, UITableViewDelegate, UITableV
     
     var foodItem:[FoodItems]?
     var selectedFoodItems:[FoodItems]?
+    var userDetails:User?
+    
     
     @IBOutlet weak var itemsTable: UITableView!
     
@@ -21,12 +23,12 @@ class SelectItemsViewController: UIViewController, UITableViewDelegate, UITableV
         // Do any additional setup after loading the view.
         
         foodItem = [
-            FoodItems(name: "cooked Vegetable", image: "cooked_veggies.jpg"),
-            FoodItems(name: "raw Vegetable", image: "raw_veggies.jpg"),
-            FoodItems(name: "cooked meat", image: "cooked_meat.jpg"),
-            FoodItems(name: "uncooked meat", image: "raw_meat.jpeg"),
-            FoodItems(name: "cooked poultry", image: "cooked_poultry.jpg"),
-            FoodItems(name: "raw poultry", image: "raw_poultry.jpg")
+            FoodItems(name: "cooked Vegetable", image: UIImage(named:"cooked_veggies.jpg")!),
+            FoodItems(name: "raw Vegetable", image: UIImage(named:"raw_veggies.jpg")!),
+            FoodItems(name: "cooked meat", image: UIImage(named:"cooked_meat.jpg")!),
+            FoodItems(name: "uncooked meat", image: UIImage(named:"raw_meat.jpeg")!),
+            FoodItems(name: "cooked poultry", image: UIImage(named:"cooked_poultry.jpg")!),
+            FoodItems(name: "raw poultry", image: UIImage(named:"raw_poultry.jpeg")!)
         ]
         self.selectedFoodItems = []
         
@@ -54,7 +56,7 @@ class SelectItemsViewController: UIViewController, UITableViewDelegate, UITableV
         
         let text = foodItem![indexPath.row]
         cell.textLabel?.text = text.getName()
-        cell.imageView?.image = UIImage(named: text.getImage())
+        cell.imageView?.image = text.getImage()
         
         return cell
     }
@@ -99,7 +101,8 @@ class SelectItemsViewController: UIViewController, UITableViewDelegate, UITableV
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let confirmPickup = storyBoard.instantiateViewController(withIdentifier: "ConfirmPickUpViewController") as! ConfirmPickUpViewController
         
-         confirmPickup.textData = itemsSelected
+        confirmPickup.textData = itemsSelected
+        confirmPickup.UserDetails = self.userDetails
         
         self.navigationController?.pushViewController(confirmPickup, animated: true)
     }

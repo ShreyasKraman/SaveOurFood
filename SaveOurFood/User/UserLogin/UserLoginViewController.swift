@@ -13,11 +13,15 @@ import Firebase
 class UserLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInDelegate {
     @IBOutlet weak var loginButton: UIButton!
     
+    var userDetails:User?
+    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error != nil{
             print(error ?? "google error")
             return
         }
+        
+        userDetails = User(email: user.profile.email, name: user.profile.name)
         
         guard let authentication = user.authentication else { return }
         
@@ -32,6 +36,15 @@ class UserLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
             
         }
         
+        let tabbar = (storyboard!.instantiateViewController(withIdentifier: "tabbar") as? UITabBarController)
+        
+        let navigate = tabbar!.viewControllers?.first as! NavigationViewController
+        let UserPlaceRequest =  navigate.viewControllers.first as! UserPlaceRequestViewController
+        
+        UserPlaceRequest.userDetails = userDetails!
+        
+        self.present(tabbar!,animated: true,completion: nil)
+        
     }
     
 
@@ -43,12 +56,14 @@ class UserLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         // Do any additional setup after loading the view.
     }
     
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "UserPlaceRequest"{
-            GIDSignIn.sharedInstance()?.signIn()
-        }
+    @IBAction func googleLogin(_ sender: Any) {
+        
+        GIDSignIn.sharedInstance()?.signIn()
+        
     }
+    
+    
+    
     /*
     // MARK: - Navigation
 

@@ -10,6 +10,13 @@
 		753F091C61D27A8A1CDAC4CA /* Pods_SaveOurFoodTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764DF9FE6FCB4A766AF7B777 /* Pods_SaveOurFoodTests.framework */; };
 		7B1AD69E81AFB5D4090B582F /* Pods_SaveOurFoodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F8F2FB67D96E32132A0783 /* Pods_SaveOurFoodUITests.framework */; };
 		D6C1FB7388EABA41C584A17C /* Pods_SaveOurFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE9002B86A3318E4D14EF35 /* Pods_SaveOurFood.framework */; };
+		E24111F021C36C07008E1108 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24111EF21C36C07008E1108 /* TabBarViewController.swift */; };
+		E24111F221C36C32008E1108 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24111F121C36C32008E1108 /* NavigationViewController.swift */; };
+		E24111F421C3906D008E1108 /* FoodItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24111F321C3906D008E1108 /* FoodItemRequest.swift */; };
+		E24111F621C39D20008E1108 /* RequestDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24111F521C39D20008E1108 /* RequestDetailsView.swift */; };
+		E24111F921C3B091008E1108 /* food-small.png in Resources */ = {isa = PBXBuildFile; fileRef = E24111F721C3B08F008E1108 /* food-small.png */; };
+		E24111FA21C3B091008E1108 /* food-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = E24111F821C3B08F008E1108 /* food-medium.png */; };
+		E24111FD21C3B188008E1108 /* ManageAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24111FC21C3B188008E1108 /* ManageAccountViewController.swift */; };
 		E2AF90C321C0CCF9002BCC8A /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF90C221C0CCF9002BCC8A /* UserLoginViewController.swift */; };
 		E2AF90C921C0EA4F002BCC8A /* UserPlaceRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF90C821C0EA4F002BCC8A /* UserPlaceRequestViewController.swift */; };
 		E2AF90CB21C0ED9C002BCC8A /* UserAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF90CA21C0ED9C002BCC8A /* UserAnalyticsViewController.swift */; };
@@ -32,6 +39,7 @@
 		E2AF910221C1D961002BCC8A /* pickup-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = E2AF910021C1D961002BCC8A /* pickup-medium.png */; };
 		E2AF910421C1DDA2002BCC8A /* SelectItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF910321C1DDA2002BCC8A /* SelectItemsViewController.swift */; };
 		E2AF910621C1DF4A002BCC8A /* ConfirmPickUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF910521C1DF4A002BCC8A /* ConfirmPickUpViewController.swift */; };
+		E2AF910921C2D936002BCC8A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF910821C2D936002BCC8A /* User.swift */; };
 		E2C3DA7A21BF875A0064648E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3DA7921BF875A0064648E /* AppDelegate.swift */; };
 		E2C3DA7C21BF875A0064648E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3DA7B21BF875A0064648E /* ViewController.swift */; };
 		E2C3DA7F21BF875A0064648E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C3DA7D21BF875A0064648E /* Main.storyboard */; };
@@ -39,7 +47,6 @@
 		E2C3DA8421BF875C0064648E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C3DA8221BF875C0064648E /* LaunchScreen.storyboard */; };
 		E2C3DA8F21BF875C0064648E /* SaveOurFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3DA8E21BF875C0064648E /* SaveOurFoodTests.swift */; };
 		E2C3DA9A21BF875C0064648E /* SaveOurFoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C3DA9921BF875C0064648E /* SaveOurFoodUITests.swift */; };
-		E2C3DAA821BF8CB50064648E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2C3DAA721BF8CB50064648E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +75,13 @@
 		764DF9FE6FCB4A766AF7B777 /* Pods_SaveOurFoodTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaveOurFoodTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC4CC429D95A7F7F484CD55 /* Pods-SaveOurFoodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveOurFoodTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveOurFoodTests/Pods-SaveOurFoodTests.release.xcconfig"; sourceTree = "<group>"; };
 		C79904DDA12A7D28785A14FA /* Pods-SaveOurFoodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveOurFoodTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaveOurFoodTests/Pods-SaveOurFoodTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E24111EF21C36C07008E1108 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E24111F121C36C32008E1108 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		E24111F321C3906D008E1108 /* FoodItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemRequest.swift; sourceTree = "<group>"; };
+		E24111F521C39D20008E1108 /* RequestDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailsView.swift; sourceTree = "<group>"; };
+		E24111F721C3B08F008E1108 /* food-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "food-small.png"; path = "../../../../../Downloads/Ingredients-24-48px/food-small.png"; sourceTree = "<group>"; };
+		E24111F821C3B08F008E1108 /* food-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "food-medium.png"; path = "../../../../../Downloads/Ingredients-24-48px/food-medium.png"; sourceTree = "<group>"; };
+		E24111FC21C3B188008E1108 /* ManageAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageAccountViewController.swift; sourceTree = "<group>"; };
 		E2AF90C221C0CCF9002BCC8A /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
 		E2AF90C821C0EA4F002BCC8A /* UserPlaceRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlaceRequestViewController.swift; sourceTree = "<group>"; };
 		E2AF90CA21C0ED9C002BCC8A /* UserAnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAnalyticsViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +104,7 @@
 		E2AF910021C1D961002BCC8A /* pickup-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pickup-medium.png"; path = "../../../../../Downloads/Pickup-24-48-100px/pickup-medium.png"; sourceTree = "<group>"; };
 		E2AF910321C1DDA2002BCC8A /* SelectItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectItemsViewController.swift; sourceTree = "<group>"; };
 		E2AF910521C1DF4A002BCC8A /* ConfirmPickUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPickUpViewController.swift; sourceTree = "<group>"; };
+		E2AF910821C2D936002BCC8A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E2C3DA7621BF875A0064648E /* SaveOurFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveOurFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C3DA7921BF875A0064648E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C3DA7B21BF875A0064648E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +118,6 @@
 		E2C3DA9521BF875C0064648E /* SaveOurFoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaveOurFoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C3DA9921BF875C0064648E /* SaveOurFoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveOurFoodUITests.swift; sourceTree = "<group>"; };
 		E2C3DA9B21BF875C0064648E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2C3DAA721BF8CB50064648E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E86D01E14B4C80A34FF8BF6E /* Pods-SaveOurFoodUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveOurFoodUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveOurFoodUITests/Pods-SaveOurFoodUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +159,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E24111FB21C3B171008E1108 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				E24111FC21C3B188008E1108 /* ManageAccountViewController.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
 		E2AF90C121C0CCCE002BCC8A /* UserLogin */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +198,8 @@
 		E2AF90D021C17CFF002BCC8A /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				E24111F821C3B08F008E1108 /* food-medium.png */,
+				E24111F721C3B08F008E1108 /* food-small.png */,
 				E2AF910021C1D961002BCC8A /* pickup-medium.png */,
 				E2AF90FF21C1D961002BCC8A /* pickup-small.png */,
 				E2AF90FB21C1D955002BCC8A /* status-medium.png */,
@@ -194,6 +218,9 @@
 				E2AF90C821C0EA4F002BCC8A /* UserPlaceRequestViewController.swift */,
 				E2AF910321C1DDA2002BCC8A /* SelectItemsViewController.swift */,
 				E2AF910521C1DF4A002BCC8A /* ConfirmPickUpViewController.swift */,
+				E24111EF21C36C07008E1108 /* TabBarViewController.swift */,
+				E24111F121C36C32008E1108 /* NavigationViewController.swift */,
+				E24111F521C39D20008E1108 /* RequestDetailsView.swift */,
 			);
 			path = UserPlaceRequest;
 			sourceTree = "<group>";
@@ -202,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				E2AF90E321C1D26C002BCC8A /* FoodItems.swift */,
+				E2AF910821C2D936002BCC8A /* User.swift */,
+				E24111F321C3906D008E1108 /* FoodItemRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,10 +282,10 @@
 		E2C3DA7821BF875A0064648E /* SaveOurFood */ = {
 			isa = PBXGroup;
 			children = (
+				E24111FB21C3B171008E1108 /* Admin */,
 				E2AF90E521C1D3B5002BCC8A /* Assets */,
 				E2AF90E221C1D239002BCC8A /* Model */,
 				E2AF90C421C0E386002BCC8A /* User */,
-				E2C3DAA721BF8CB50064648E /* GoogleService-Info.plist */,
 				E2C3DA7921BF875A0064648E /* AppDelegate.swift */,
 				E2C3DA7B21BF875A0064648E /* ViewController.swift */,
 				E2C3DA7D21BF875A0064648E /* Main.storyboard */,
@@ -407,10 +436,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E24111FA21C3B091008E1108 /* food-medium.png in Resources */,
 				E2AF90F021C1D4A5002BCC8A /* raw_meat.jpeg in Resources */,
 				E2C3DA8421BF875C0064648E /* LaunchScreen.storyboard in Resources */,
 				E2AF90EE21C1D4A5002BCC8A /* raw_veggies.jpg in Resources */,
-				E2C3DAA821BF8CB50064648E /* GoogleService-Info.plist in Resources */,
+				E24111F921C3B091008E1108 /* food-small.png in Resources */,
 				E2AF90F221C1D4A5002BCC8A /* cooked_veggies.jpg in Resources */,
 				E2AF910121C1D961002BCC8A /* pickup-small.png in Resources */,
 				E2AF910221C1D961002BCC8A /* pickup-medium.png in Resources */,
@@ -501,6 +531,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -510,6 +541,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,16 +600,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E24111F621C39D20008E1108 /* RequestDetailsView.swift in Sources */,
 				E2AF90C321C0CCF9002BCC8A /* UserLoginViewController.swift in Sources */,
+				E24111F221C36C32008E1108 /* NavigationViewController.swift in Sources */,
+				E24111FD21C3B188008E1108 /* ManageAccountViewController.swift in Sources */,
 				E2C3DA7C21BF875A0064648E /* ViewController.swift in Sources */,
 				E2AF90CB21C0ED9C002BCC8A /* UserAnalyticsViewController.swift in Sources */,
 				E2AF90C921C0EA4F002BCC8A /* UserPlaceRequestViewController.swift in Sources */,
+				E24111F021C36C07008E1108 /* TabBarViewController.swift in Sources */,
+				E24111F421C3906D008E1108 /* FoodItemRequest.swift in Sources */,
 				E2AF90E421C1D26C002BCC8A /* FoodItems.swift in Sources */,
 				E2AF90CD21C178EF002BCC8A /* UserStatusViewController.swift in Sources */,
 				E2AF90CF21C17941002BCC8A /* UserAccountsViewController.swift in Sources */,
 				E2AF910621C1DF4A002BCC8A /* ConfirmPickUpViewController.swift in Sources */,
 				E2C3DA7A21BF875A0064648E /* AppDelegate.swift in Sources */,
 				E2AF910421C1DDA2002BCC8A /* SelectItemsViewController.swift in Sources */,
+				E2AF910921C2D936002BCC8A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,6 +792,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7P6MZ66P2R;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"/**",
@@ -788,6 +827,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7P6MZ66P2R;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"/**",
