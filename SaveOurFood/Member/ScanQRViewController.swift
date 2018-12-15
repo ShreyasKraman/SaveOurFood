@@ -100,7 +100,7 @@ class ScanQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             let databaseReferrer = Database.database().reference().child("Boston/"+id!)
             
             databaseReferrer.updateChildValues([
-                "status":"Delivered"
+                "status":"Pickup completed"
             ])
             
             let alert = UIAlertController(title: "Success", message: "Verified successfully", preferredStyle:UIAlertController.Style.alert)
@@ -113,7 +113,6 @@ class ScanQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
     override var prefersStatusBarHidden: Bool {
         return true
     }
