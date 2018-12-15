@@ -40,7 +40,7 @@ class MemberRequestViewController: UIViewController, UITableViewDelegate, UITabl
                     let emailId = itemObject?["emailId"]
                     let itemsName = itemObject?["data"] as! String
                     let id = itemObject?["id"] as! String
-                    let imageUrl = itemObject?["image"] as! String
+                    //let imageUrl = itemObject?["image"] as! String
                     let date = itemObject?["date"] as! String
                     let time = itemObject?["time"] as! String
                     let day = itemObject?["day"] as! String
@@ -52,20 +52,20 @@ class MemberRequestViewController: UIViewController, UITableViewDelegate, UITabl
                     }
                     
                     //Retreive image
-                    let storageRef = Storage.storage().reference(forURL: imageUrl as! String)
-                    
-                    storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-                                                // Create a UIImage, add it to the array
-                        let pic = UIImage(data: data!)
-                    
-                        let foodItems = FoodItemRequest(id: id, date: date, time: time, day: day, items: itemsName, image: pic!,status: status, approver: "")
-                        
+//                    let storageRef = Storage.storage().reference(forURL: imageUrl as! String)
+//
+//                    storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
+//                                                // Create a UIImage, add it to the array
+//                        let pic = UIImage(data: data!)
+//
+                    let foodItems = FoodItemRequest(id: id, date: date, time: time, day: day, items: itemsName, image: UIImage(named:"raw_meat.jpeg")!,status: status, approver: "")
+
                         self.requestDetails.append(foodItems)
-                        
+
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
-                    }
+//                    }
                     
                 }
                 
@@ -96,9 +96,15 @@ class MemberRequestViewController: UIViewController, UITableViewDelegate, UITabl
         
         let request = requestDetails[indexPath.row]
         
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let approveRequest = storyBoard.instantiateViewController(withIdentifier: "approveRequest") as! ApproveRequestViewController
         
+        approveRequest.requestImage.image = request.getImage()
+        approveRequest.textBox.text = request.getData()
+        approveRequest.Timestamp.text = "Requested on " + request.getdate() + " at " + request.getTime()
+        approveRequest.requestDetails = request
         
-        
+        self.navigationController?.pushViewController(approveRequest, animated: true)
 
     }
 

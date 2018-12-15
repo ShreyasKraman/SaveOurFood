@@ -299,7 +299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWg-1w-eAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-226.08695652173915" y="2610.326086956522"/>
+            <point key="canvasLocation" x="655" y="2702"/>
         </scene>
         <!--Add Item View Controller-->
         <scene sceneID="jsT-LU-GZy">
@@ -369,7 +369,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpU-zh-IhM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="553.62318840579712" y="2609.5108695652175"/>
+            <point key="canvasLocation" x="1452" y="2702"/>
         </scene>
         <!--Manage Accounts-->
         <scene sceneID="0Aq-zR-Wbe">
@@ -477,6 +477,7 @@
                     <connections>
                         <segue destination="zGb-r9-OwW" kind="relationship" relationship="viewControllers" id="ihV-NB-MbV"/>
                         <segue destination="SpO-Io-Q1I" kind="relationship" relationship="viewControllers" id="rf5-Fm-d0w"/>
+                        <segue destination="2Vg-vv-nIB" kind="relationship" relationship="viewControllers" id="EUh-Xb-Zsv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b0Y-Vh-Lnz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -930,17 +931,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="mPL-vC-thm"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Analytics" id="cdP-Yx-wj6"/>
+                    <tabBarItem key="tabBarItem" title="Analytics" image="analytics-small.png" largeContentSizeImage="analytics-medium.png" id="cdP-Yx-wj6"/>
                     <navigationItem key="navigationItem" title="Analytics" id="gWG-H4-6wf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ky-Ag-zdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1357" y="2002"/>
+            <point key="canvasLocation" x="916" y="1952"/>
         </scene>
         <!--Account-->
         <scene sceneID="8jn-kt-ZSk">
             <objects>
-                <viewController id="15C-2B-K63" sceneMemberID="viewController">
+                <viewController id="15C-2B-K63" customClass="MemberAccountViewController" customModule="SaveOurFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VJw-Ep-PWn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -990,6 +991,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afV-lL-mTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2911.594202898551" y="826.63043478260875"/>
+        </scene>
+        <!--Approve Request View Controller-->
+        <scene sceneID="eWS-eZ-KUv">
+            <objects>
+                <viewController storyboardIdentifier="approveRequest" id="fLC-Ip-v1n" customClass="ApproveRequestViewController" customModule="SaveOurFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j5L-Sk-trm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approve Request" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdU-8N-bs9">
+                                <rect key="frame" x="107" y="65" width="200" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qDX-Sr-xDG">
+                                <rect key="frame" x="20" y="139" width="374" height="214"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdZ-p5-DfE">
+                                <rect key="frame" x="183" y="409" width="60" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oOa-Qb-lNP">
+                                <rect key="frame" x="20" y="470" width="374" height="125"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="fHY-B2-00C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLb-TD-2cc">
+                                <rect key="frame" x="108" y="646" width="210" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="approveRequest:" destination="fLC-Ip-v1n" eventType="touchUpInside" id="BDH-wM-fma"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qDX-Sr-xDG" firstAttribute="leading" secondItem="j5L-Sk-trm" secondAttribute="leadingMargin" id="03k-VR-aHU"/>
+                            <constraint firstItem="bdU-8N-bs9" firstAttribute="centerX" secondItem="qDX-Sr-xDG" secondAttribute="centerX" id="0dH-2k-KZM"/>
+                            <constraint firstItem="bdU-8N-bs9" firstAttribute="top" secondItem="WB6-xT-2rA" secondAttribute="top" constant="45" id="2sH-kJ-IK8"/>
+                            <constraint firstItem="WB6-xT-2rA" firstAttribute="bottom" secondItem="uLb-TD-2cc" secondAttribute="bottom" constant="60" id="FYu-yn-gHY"/>
+                            <constraint firstItem="oOa-Qb-lNP" firstAttribute="top" secondItem="CdZ-p5-DfE" secondAttribute="bottom" constant="31" id="RWY-2s-a06"/>
+                            <constraint firstItem="CdZ-p5-DfE" firstAttribute="top" secondItem="qDX-Sr-xDG" secondAttribute="bottom" constant="56" id="YFO-u1-OO0"/>
+                            <constraint firstItem="CdZ-p5-DfE" firstAttribute="centerX" secondItem="uLb-TD-2cc" secondAttribute="centerX" id="YYD-u5-PNT"/>
+                            <constraint firstItem="uLb-TD-2cc" firstAttribute="leading" secondItem="WB6-xT-2rA" secondAttribute="leading" constant="108" id="aSA-no-NI0"/>
+                            <constraint firstItem="qDX-Sr-xDG" firstAttribute="leading" secondItem="oOa-Qb-lNP" secondAttribute="leading" id="dEA-8d-NQ3"/>
+                            <constraint firstItem="qDX-Sr-xDG" firstAttribute="trailing" secondItem="j5L-Sk-trm" secondAttribute="trailingMargin" id="ocd-tv-jcl"/>
+                            <constraint firstItem="uLb-TD-2cc" firstAttribute="top" secondItem="oOa-Qb-lNP" secondAttribute="bottom" constant="51" id="pwa-f6-uuG"/>
+                            <constraint firstItem="qDX-Sr-xDG" firstAttribute="trailing" secondItem="oOa-Qb-lNP" secondAttribute="trailing" id="sy3-ly-r0O"/>
+                            <constraint firstItem="qDX-Sr-xDG" firstAttribute="top" secondItem="bdU-8N-bs9" secondAttribute="bottom" constant="41" id="v2O-Hg-6eu"/>
+                            <constraint firstItem="CdZ-p5-DfE" firstAttribute="leading" secondItem="WB6-xT-2rA" secondAttribute="leading" constant="183" id="x0Z-WW-HQB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WB6-xT-2rA"/>
+                    </view>
+                    <connections>
+                        <outlet property="Timestamp" destination="CdZ-p5-DfE" id="Q5u-Kq-cLr"/>
+                        <outlet property="requestImage" destination="qDX-Sr-xDG" id="NHx-hg-N6N"/>
+                        <outlet property="textBox" destination="oOa-Qb-lNP" id="rX3-XC-Czh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="szM-iS-x5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3605.7971014492755" y="826.63043478260875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Qqk-bl-RJ0">
@@ -1109,7 +1182,7 @@
         <scene sceneID="TFC-WA-y2S">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r97-0l-FjS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Requests" id="Xwa-pc-7Ql"/>
+                    <tabBarItem key="tabBarItem" title="Requests" image="notify-small.png" largeContentSizeImage="notify-medium.png" id="Xwa-pc-7Ql"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xZ7-ih-C5D">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -1128,7 +1201,7 @@
         <scene sceneID="G2v-Nc-1YK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aT2-hl-IM4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Account" id="V1l-T8-oxY"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="account-small.png" largeContentSizeImage="account-medium.png" id="V1l-T8-oxY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aVc-xH-fEj">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -1219,6 +1292,22 @@
             </objects>
             <point key="canvasLocation" x="-1133.3333333333335" y="1951.6304347826087"/>
         </scene>
+        <!--My Account-->
+        <scene sceneID="NhK-tf-OPd">
+            <objects>
+                <viewController id="U1s-5q-3pD" customClass="AdminAccountViewController" customModule="SaveOurFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3c9-ec-rVR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="IAa-GA-4nG"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Account" id="65t-5u-cvU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oN4-An-ieA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1157.9710144927537" y="3005.7065217391305"/>
+        </scene>
         <!--Manage Food-->
         <scene sceneID="LsS-vw-m1v">
             <objects>
@@ -1236,7 +1325,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Urm-8z-v9H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1133.3333333333335" y="2610.326086956522"/>
+            <point key="canvasLocation" x="-226" y="2702"/>
+        </scene>
+        <!--My Account-->
+        <scene sceneID="39H-V7-bgw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Vg-vv-nIB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Account" image="account-small.png" largeContentSizeImage="account-medium.png" id="Be4-W7-S8G"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hVO-rX-MSm">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="U1s-5q-3pD" kind="relationship" relationship="rootViewController" id="mkj-lU-4Y6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xrV-S8-fd9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2049" y="3006"/>
         </scene>
     </scenes>
     <resources>
@@ -1246,6 +1354,8 @@
         <image name="analytics-small.png" width="24" height="24"/>
         <image name="food-medium.png" width="48" height="48"/>
         <image name="food-small.png" width="24" height="24"/>
+        <image name="notify-medium.png" width="48" height="48"/>
+        <image name="notify-small.png" width="24" height="24"/>
         <image name="pickup-medium.png" width="48" height="48"/>
         <image name="pickup-small.png" width="24" height="24"/>
     </resources>

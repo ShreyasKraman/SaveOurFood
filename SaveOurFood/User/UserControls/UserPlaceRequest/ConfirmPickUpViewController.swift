@@ -129,61 +129,79 @@ class ConfirmPickUpViewController: UIViewController,UINavigationControllerDelega
         
         let day = String(components.weekday!)
         
-        if(itemsData != nil || image != nil /*|| location != nil || longiture != nil || latitude != nil */){
+        if(itemsData != nil /*|| image != nil || location != nil || longiture != nil || latitude != nil */){
         
             databaseReferer = Database.database().reference().child(location)
             
             let key = self.databaseReferer!.childByAutoId().key
             
-            let storage = Storage.storage()
-            
-            var data = Data()
-            
-            data = image!.pngData()!
-            
-            let storageRef = storage.reference()
-
-            var imageRef = storageRef.child(emailId!+"/images/"+key!+".png")
-            
+//            let storage = Storage.storage()
+//
+//            var data = Data()
+//
+//            data = image!.pngData()!
+//
+//            let storageRef = storage.reference()
+//
+//            var imageRef = storageRef.child(emailId!+"/images/"+key!+".png")
+//
             var downloadURL = ""
             
-            _ = imageRef.putData(data, metadata: nil, completion: {(metadata,error) in
-                
-                guard let metadata = metadata else{
-                    return
-                }
-                
-                imageRef.downloadURL(completion: {(url, error) in
-                    
-                    guard let url = url else{
-                        self.showErrorAlert(message: "Could not get image url")
-                        return
-                    }
-                    
-                    downloadURL = url.absoluteString
-                    
-                    let pickupData = [
-                        "id":key,
-                        "name":name,
-                        "data":itemsData,
-                        "emailId":emailId,
-                        "image":downloadURL,
-                        "date":requestDate,
-                        "time":requestTime,
-                        "day":day,
-                        "status":"Pending",
-                        "approver":""
-                        //                "lat":self.latitude!,
-                        //                "long":self.longiture!
-                    ]
-                    
-                    self.databaseReferer.child(key!).setValue(pickupData)
-                    
-                })
-                
-            })
+//            _ = imageRef.putData(data, metadata: nil, completion: {(metadata,error) in
+//
+//                guard let metadata = metadata else{
+//                    return
+//                }
+//
+//                imageRef.downloadURL(completion: {(url, error) in
+//
+//                    guard let url = url else{
+//                        self.showErrorAlert(message: "Could not get image url")
+//                        return
+//                    }
+//
+//                    downloadURL = url.absoluteString
+//
+//                    let pickupData = [
+//                        "id":key,
+//                        "name":name,
+//                        "data":itemsData,
+//                        "emailId":emailId,
+//                        "image":downloadURL,
+//                        "date":requestDate,
+//                        "time":requestTime,
+//                        "day":day,
+//                        "status":"Pending",
+//                        "approver":""
+//                        //                "lat":self.latitude!,
+//                        //                "long":self.longiture!
+//                    ]
+//
+//                    self.databaseReferer.child(key!).setValue(pickupData)
+//
+//                })
+//
+//            })
             
             //Insert user record in database
+            
+            let pickupData = [
+                "id":key,
+                "name":name,
+                "data":itemsData,
+                "emailId":emailId,
+                "image":downloadURL,
+                "date":requestDate,
+                "time":requestTime,
+                "day":day,
+                "status":"Pending",
+                "approver":""
+                //                "lat":self.latitude!,
+                //                "long":self.longiture!
+            ]
+            
+            self.databaseReferer.child(key!).setValue(pickupData)
+            
             
             databaseReferer = Database.database().reference().child("Users")
             

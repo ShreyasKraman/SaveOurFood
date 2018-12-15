@@ -10,6 +10,11 @@
 		753F091C61D27A8A1CDAC4CA /* Pods_SaveOurFoodTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 764DF9FE6FCB4A766AF7B777 /* Pods_SaveOurFoodTests.framework */; };
 		7B1AD69E81AFB5D4090B582F /* Pods_SaveOurFoodUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F8F2FB67D96E32132A0783 /* Pods_SaveOurFoodUITests.framework */; };
 		D6C1FB7388EABA41C584A17C /* Pods_SaveOurFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE9002B86A3318E4D14EF35 /* Pods_SaveOurFood.framework */; };
+		E2180BF221C4B01100389F77 /* AdminAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2180BF121C4B01100389F77 /* AdminAccountViewController.swift */; };
+		E2180BF521C4B23000389F77 /* notify-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = E2180BF321C4B22E00389F77 /* notify-medium.png */; };
+		E2180BF621C4B23000389F77 /* notify-small.png in Resources */ = {isa = PBXBuildFile; fileRef = E2180BF421C4B22F00389F77 /* notify-small.png */; };
+		E2180BF821C4B2AC00389F77 /* MemberAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2180BF721C4B2AC00389F77 /* MemberAccountViewController.swift */; };
+		E2180BFA21C4B74E00389F77 /* ApproveRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2180BF921C4B74E00389F77 /* ApproveRequestViewController.swift */; };
 		E24111F021C36C07008E1108 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24111EF21C36C07008E1108 /* TabBarViewController.swift */; };
 		E24111F221C36C32008E1108 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24111F121C36C32008E1108 /* NavigationViewController.swift */; };
 		E24111F421C3906D008E1108 /* FoodItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24111F321C3906D008E1108 /* FoodItemRequest.swift */; };
@@ -85,6 +90,11 @@
 		764DF9FE6FCB4A766AF7B777 /* Pods_SaveOurFoodTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SaveOurFoodTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC4CC429D95A7F7F484CD55 /* Pods-SaveOurFoodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveOurFoodTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveOurFoodTests/Pods-SaveOurFoodTests.release.xcconfig"; sourceTree = "<group>"; };
 		C79904DDA12A7D28785A14FA /* Pods-SaveOurFoodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveOurFoodTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaveOurFoodTests/Pods-SaveOurFoodTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E2180BF121C4B01100389F77 /* AdminAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminAccountViewController.swift; sourceTree = "<group>"; };
+		E2180BF321C4B22E00389F77 /* notify-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notify-medium.png"; path = "../../../../../Downloads/Notification-24-48px/notify-medium.png"; sourceTree = "<group>"; };
+		E2180BF421C4B22F00389F77 /* notify-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "notify-small.png"; path = "../../../../../Downloads/Notification-24-48px/notify-small.png"; sourceTree = "<group>"; };
+		E2180BF721C4B2AC00389F77 /* MemberAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAccountViewController.swift; sourceTree = "<group>"; };
+		E2180BF921C4B74E00389F77 /* ApproveRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApproveRequestViewController.swift; sourceTree = "<group>"; };
 		E24111EF21C36C07008E1108 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E24111F121C36C32008E1108 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		E24111F321C3906D008E1108 /* FoodItemRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemRequest.swift; sourceTree = "<group>"; };
@@ -186,6 +196,7 @@
 				E241120221C4252C008E1108 /* AddFoodItemViewController.swift */,
 				E241120421C437B1008E1108 /* AddItemViewController.swift */,
 				E241120921C4420B008E1108 /* AdminTabBarViewController.swift */,
+				E2180BF121C4B01100389F77 /* AdminAccountViewController.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -197,6 +208,8 @@
 				E241120D21C47195008E1108 /* MemberRegisterationViewController.swift */,
 				E241120F21C48D67008E1108 /* MemberRequestViewController.swift */,
 				E241121121C4920B008E1108 /* MemberNavigationController.swift */,
+				E2180BF721C4B2AC00389F77 /* MemberAccountViewController.swift */,
+				E2180BF921C4B74E00389F77 /* ApproveRequestViewController.swift */,
 			);
 			path = Member;
 			sourceTree = "<group>";
@@ -232,6 +245,8 @@
 		E2AF90D021C17CFF002BCC8A /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				E2180BF321C4B22E00389F77 /* notify-medium.png */,
+				E2180BF421C4B22F00389F77 /* notify-small.png */,
 				E24111F821C3B08F008E1108 /* food-medium.png */,
 				E24111F721C3B08F008E1108 /* food-small.png */,
 				E2AF910021C1D961002BCC8A /* pickup-medium.png */,
@@ -481,6 +496,7 @@
 				E24111F921C3B091008E1108 /* food-small.png in Resources */,
 				E2AF90F221C1D4A5002BCC8A /* cooked_veggies.jpg in Resources */,
 				E2AF910121C1D961002BCC8A /* pickup-small.png in Resources */,
+				E2180BF521C4B23000389F77 /* notify-medium.png in Resources */,
 				E2AF910221C1D961002BCC8A /* pickup-medium.png in Resources */,
 				E2AF90F521C1D93C002BCC8A /* account-medium.png in Resources */,
 				E2C3DA8121BF875C0064648E /* Assets.xcassets in Resources */,
@@ -491,6 +507,7 @@
 				E2AF90EF21C1D4A5002BCC8A /* raw_poultry.jpeg in Resources */,
 				E2AF90FD21C1D955002BCC8A /* status-medium.png in Resources */,
 				E2AF90FE21C1D955002BCC8A /* status-small.png in Resources */,
+				E2180BF621C4B23000389F77 /* notify-small.png in Resources */,
 				E24111FF21C3B319008E1108 /* GoogleService-Info.plist in Resources */,
 				E2AF90F121C1D4A5002BCC8A /* cooked_poultry.jpg in Resources */,
 				E2AF90F921C1D94A002BCC8A /* analytics-medium.png in Resources */,
@@ -646,13 +663,16 @@
 				E24111F221C36C32008E1108 /* NavigationViewController.swift in Sources */,
 				E241121021C48D67008E1108 /* MemberRequestViewController.swift in Sources */,
 				E24111FD21C3B188008E1108 /* ManageAccountViewController.swift in Sources */,
+				E2180BF821C4B2AC00389F77 /* MemberAccountViewController.swift in Sources */,
 				E2C3DA7C21BF875A0064648E /* ViewController.swift in Sources */,
 				E2AF90CB21C0ED9C002BCC8A /* UserAnalyticsViewController.swift in Sources */,
 				E241120821C44009008E1108 /* MemberLoginViewController.swift in Sources */,
 				E2AF90C921C0EA4F002BCC8A /* UserPlaceRequestViewController.swift in Sources */,
 				E241120A21C4420B008E1108 /* AdminTabBarViewController.swift in Sources */,
 				E24111F021C36C07008E1108 /* TabBarViewController.swift in Sources */,
+				E2180BFA21C4B74E00389F77 /* ApproveRequestViewController.swift in Sources */,
 				E241120321C4252C008E1108 /* AddFoodItemViewController.swift in Sources */,
+				E2180BF221C4B01100389F77 /* AdminAccountViewController.swift in Sources */,
 				E24111F421C3906D008E1108 /* FoodItemRequest.swift in Sources */,
 				E2AF90E421C1D26C002BCC8A /* FoodItems.swift in Sources */,
 				E2AF90CD21C178EF002BCC8A /* UserStatusViewController.swift in Sources */,
