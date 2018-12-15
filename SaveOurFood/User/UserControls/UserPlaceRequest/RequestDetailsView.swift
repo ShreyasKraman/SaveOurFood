@@ -15,20 +15,32 @@ class RequestDetailsView: UIViewController {
     
     @IBOutlet weak var itemImage: UIImageView!
     
-    
     @IBOutlet weak var dateTime: UILabel!
-    
     
     @IBOutlet weak var contentsView: UITextView!
     
+    var id:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view
+        
     }
     
-
+    @IBAction func generateqrCode(_ sender: Any) {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let generateqr = storyBoard.instantiateViewController(withIdentifier: "viewQR") as! QRCodeViewController
+        
+        generateqr.id = self.id
+        
+        self.navigationController?.pushViewController(generateqr, animated: true)
+        
+    
+    }
+    
+    
     /*
     // MARK: - Navigation
 

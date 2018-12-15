@@ -98,7 +98,7 @@ class UserPlaceRequestViewController: UIViewController, UITableViewDataSource, U
 //                            let pic = UIImage(data: data!)
 //
 //
-                        let foodItems = FoodItemRequest(id: id, date: date, time: time, day: day, items: itemsName, image: UIImage(named:"raw_meat.jpeg")!,status: status)
+                        let foodItems = FoodItemRequest(id: id, date: date, time: time, day: day, items: itemsName, image: UIImage(named:"raw_meat.jpeg")!,status: status, approver: "")
                         
                             self.requestDetails.append(foodItems)
 //                        }
@@ -165,6 +165,46 @@ class UserPlaceRequestViewController: UIViewController, UITableViewDataSource, U
         return cell
 
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let requestedItem = storyBoard.instantiateViewController(withIdentifier: "requestDetails") as! RequestDetailsView
+        
+        requestedItem.view.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: self.view.frame.height)
+
+            let selectedRow = indexPath.row
+            
+            let requestItem = requestDetails[selectedRow]
+            
+            if requestItem.getStatus() == "Pending"{
+                requestedItem.statusText.text = "Awaiting pickup details"
+                requestedItem.statusText.textColor = UIColor.yellow
+            }else if requestItem.getStatus() == "Pickup confirmed"{
+                requestedItem.statusText.text = "volunteer on his way"
+                requestedItem.statusText.textColor = UIColor.lightGray
+            }else if requestItem.getStatus() == "Pickup completed"{
+                requestedItem.statusText.text = "Delivered"
+                requestedItem.statusText.textColor = UIColor.green
+            }else{
+                requestedItem.statusText.text = "Cancelled"
+                requestedItem.statusText.textColor = UIColor.red
+            }
+            
+            let day = daysOfWeek[Int(requestItem.getday())!]
+            
+            requestedItem.dateTime.text = "the " + day!
+            requestedItem.dateTime.text = requestedItem.dateTime.text! + ", " + requestItem.getdate() + " at " + requestItem.getTime() + " hrs"
+            
+            requestedItem.contentsView.text = requestItem.getData()
+            requestedItem.itemImage.image = requestItem.getImage()
+        
+            requestedItem.id = requestItem.getRequestId()
+            
+            self.navigationController?.pushViewController(requestedItem, animated: true)
+            
+
+    }
 
     @objc func selectItems(sender: UIBarButtonItem) {
         
@@ -177,44 +217,6 @@ class UserPlaceRequestViewController: UIViewController, UITableViewDataSource, U
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "expandCell"{
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let requestedItem = storyBoard.instantiateViewController(withIdentifier: "requestDetails") as! RequestDetailsView
-            
-            requestedItem.view.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: self.view.frame.height)
-            
-            if let indexPath = itemsTable.indexPathForSelectedRow{
-                let selectedRow = indexPath.row
-                
-               let requestItem = requestDetails[selectedRow]
-                
-                if requestItem.getStatus() == "Pending"{
-                    requestedItem.statusText.text = "Awaiting pickup details"
-                    requestedItem.statusText.textColor = UIColor.yellow
-                }else if requestItem.getStatus() == "Pickup confirmed"{
-                    requestedItem.statusText.text = "volunteer on his way"
-                    requestedItem.statusText.textColor = UIColor.lightGray
-                }else if requestItem.getStatus() == "Pickup completed"{
-                    requestedItem.statusText.text = "Delivered"
-                    requestedItem.statusText.textColor = UIColor.green
-                }else{
-                    requestedItem.statusText.text = "Cancelled"
-                    requestedItem.statusText.textColor = UIColor.red
-                }
-                
-                let day = daysOfWeek[Int(requestItem.getday())!]
-                
-                requestedItem.dateTime.text = "the " + day!
-                requestedItem.dateTime.text = requestedItem.dateTime.text! + ", " + requestItem.getdate() + " at " + requestItem.getTime() + " hrs"
-                
-                requestedItem.contentsView.text = requestItem.getData()
-                
-                self.navigationController?.pushViewController(requestedItem, animated: true)
-                
-                
-            }
-        }
-    }
+
     
 }

@@ -18,8 +18,9 @@ class FoodItemRequest{
     var time:String?
     var day:String?
     var status:String?
+    var requester:String?
     
-    init(id: String, date:String,time:String,day:String, items:String, image:UIImage, status:String) {
+    init(id: String, date:String,time:String,day:String, items:String, image:UIImage, status:String, approver:String) {
         requestId = id
         self.date = date
         self.time = time
@@ -27,6 +28,8 @@ class FoodItemRequest{
         self.data = items
         self.image = image
         self.status = status
+        self.requester = approver
+        
     }
     
     func getRequestId() -> String{
@@ -51,6 +54,10 @@ class FoodItemRequest{
     
     func getStatus() -> String{
         return status!
+    }
+    
+    func getApprover() -> String{
+        return requester!
     }
 
 }

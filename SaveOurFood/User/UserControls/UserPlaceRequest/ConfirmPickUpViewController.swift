@@ -48,19 +48,19 @@ class ConfirmPickUpViewController: UIViewController,UINavigationControllerDelega
         // Do any additional setup after loading the view.
     }
     
-//    @IBAction func didTapOnTakePhotoButton(_ sender: UIButton) {
-//
-//        imagePickerController = UIImagePickerController()
-//        imagePickerController.delegate = self
-//        imagePickerController.sourceType = .camera
-//        present(imagePickerController, animated: true, completion: nil)
-//
-//    }
+    @IBAction func didTapOnTakePhotoButton(_ sender: UIButton) {
+
+        imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .camera
+        present(imagePickerController, animated: true, completion: nil)
+
+    }
     
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        imagePickerController.dismiss(animated: true, completion: nil)
-//        photoImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-//    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imagePickerController.dismiss(animated: true, completion: nil)
+        photoImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+    }
 
 //    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //        if let lat = locations.last?.coordinate.latitude, let long = locations.last?.coordinate.longitude {
@@ -129,51 +129,59 @@ class ConfirmPickUpViewController: UIViewController,UINavigationControllerDelega
         
         let day = String(components.weekday!)
         
-        if(itemsData != nil /*|| image != nil || location != nil || longiture != nil || latitude != nil */){
+        if(itemsData != nil || image != nil /*|| location != nil || longiture != nil || latitude != nil */){
         
             databaseReferer = Database.database().reference().child(location)
             
             let key = self.databaseReferer!.childByAutoId().key
             
-//            let storage = Storage.storage()
+            let storage = Storage.storage()
             
-//            var data = Data()
+            var data = Data()
             
-          //  data = image!.pngData()!
+            data = image!.pngData()!
             
-//            let storageRef = storage.reference()
-//
-//            var imageRef = storageRef.child(emailId!+"/images/"+key!+".png")
+            let storageRef = storage.reference()
+
+            var imageRef = storageRef.child(emailId!+"/images/"+key!+".png")
             
             var downloadURL = ""
             
-//            imageRef.downloadURL(completion: {(url, error) in
-//
-//                guard let url = url else{
-//                    self.showErrorAlert(message: "Could not get image url")
-//                    return
-//                }
-//
-//                downloadURL = url.absoluteString
-//
-//            })
-            
-            let pickupData = [
-                "id":key,
-                "name":name,
-                "data":itemsData,
-                "emailId":emailId,
-                "image":downloadURL,
-                "date":requestDate,
-                "time":requestTime,
-                "day":day,
-                "status":"Pending"
-//                "lat":self.latitude!,
-//                "long":self.longiture!
-                ]
+            _ = imageRef.putData(data, metadata: nil, completion: {(metadata,error) in
+                
+                guard let metadata = metadata else{
+                    return
+                }
+                
+                imageRef.downloadURL(completion: {(url, error) in
                     
-            self.databaseReferer.child(key!).setValue(pickupData)
-            
+                    guard let url = url else{
+                        self.showErrorAlert(message: "Could not get image url")
+                        return
+                    }
+                    
+                    downloadURL = url.absoluteString
+                    
+                    let pickupData = [
+                        "id":key,
+                        "name":name,
+                        "data":itemsData,
+                        "emailId":emailId,
+                        "image":downloadURL,
+                        "date":requestDate,
+                        "time":requestTime,
+                        "day":day,
+                        "status":"Pending",
+                        "approver":""
+                        //                "lat":self.latitude!,
+                        //                "long":self.longiture!
+                    ]
+                    
+                    self.databaseReferer.child(key!).setValue(pickupData)
+                    
+                })
+                
+            })
             
             //Insert user record in database
             
@@ -195,6 +203,9 @@ class ConfirmPickUpViewController: UIViewController,UINavigationControllerDelega
             
             self.databaseReferer.child(keyUser!).setValue(userRequestData)
             
+            let alert = UIAlertController(title: "Success", message: "Pickup request placed successfully!", preferredStyle:UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style:UIAlertAction.Style.destructive, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             
         }else{
             showErrorAlert(message: "image, location are mandatory. Please upload the image or allow location access")

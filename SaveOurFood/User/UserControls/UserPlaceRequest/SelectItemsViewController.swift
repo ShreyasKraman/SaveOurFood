@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseStorage
 
-class SelectItemsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SelectItemsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
-    var foodItem:[FoodItems]?
-    var selectedFoodItems:[FoodItems]?
+    var foodItem = [FoodItems]()
+    var selectedFoodItems = [FoodItems]()
     var userDetails:User?
     
     
@@ -22,14 +24,44 @@ class SelectItemsViewController: UIViewController, UITableViewDelegate, UITableV
 
         // Do any additional setup after loading the view.
         
-        foodItem = [
-            FoodItems(name: "cooked Vegetable", image: UIImage(named:"cooked_veggies.jpg")!),
-            FoodItems(name: "raw Vegetable", image: UIImage(named:"raw_veggies.jpg")!),
-            FoodItems(name: "cooked meat", image: UIImage(named:"cooked_meat.jpg")!),
-            FoodItems(name: "uncooked meat", image: UIImage(named:"raw_meat.jpeg")!),
-            FoodItems(name: "cooked poultry", image: UIImage(named:"cooked_poultry.jpg")!),
-            FoodItems(name: "raw poultry", image: UIImage(named:"raw_poultry.jpeg")!)
-        ]
+        let databaseReferrer = Database.database().reference().child("FoodItems")
+        
+        databaseReferrer.observe(.value, with: {(snapshot) in
+            
+            if snapshot.childrenCount > 0{
+                
+                self.foodItem.removeAll()
+                
+                for items in snapshot.children.allObjects as! [DataSnapshot]{
+                    let itemObject = items.value as? [String:AnyObject]
+                    
+                    let id = itemObject?["id"] as! String
+                    let name = itemObject?["item"] as! String
+                    let imageURL = itemObject?["image"] as! String
+                    
+                    //Retreive image
+                    if imageURL != nil{
+                        let storageRef = Storage.storage().reference(forURL: imageURL as! String)
+                        
+                        storageRef.getData(maxSize: 5 * 1024 * 1024) { (data, error) -> Void in
+                            // Create a UIImage, add it to the array
+                            let pic = UIImage(data: data!)
+                            
+                            let foodItem = FoodItems(name: name, image: pic!)
+                            
+                            self.foodItem.append(foodItem)
+                            
+                            DispatchQueue.main.async {
+                                self.itemsTable.reloadData()
+                            } 
+                        }
+                    }
+                }
+                
+            }
+            
+        })
+        
         self.selectedFoodItems = []
         
         itemsTable.dataSource = self
@@ -48,13 +80,13 @@ class SelectItemsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foodItem!.count
+        return foodItem.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.itemsTable.dequeueReusableCell(withIdentifier: "reuseCell")!
         
-        let text = foodItem![indexPath.row]
+        let text = foodItem[indexPath.row]
         cell.textLabel?.text = text.getName()
         cell.imageView?.image = text.getImage()
         
@@ -69,7 +101,7 @@ class SelectItemsViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
         
-        self.selectedFoodItems?.append(foodItem![indexPath.row])
+        self.selectedFoodItems.append(foodItem[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -79,20 +111,20 @@ class SelectItemsViewController: UIViewController, UITableViewDelegate, UITableV
         }
         
         var pos = 0
-        for i in selectedFoodItems!{
-            if i.getName() == foodItem![indexPath.row].getName(){
+        for i in selectedFoodItems{
+            if i.getName() == foodItem[indexPath.row].getName(){
                 break;
             }
             pos = pos + 1
         }
         
-        self.selectedFoodItems?.remove(at: pos)
+        self.selectedFoodItems.remove(at: pos)
     }
     
     @objc func confirmPickUp(sender:UIBarButtonItem) {
         
             var itemsSelected:String = ""
-        for i in self.selectedFoodItems!{
+        for i in self.selectedFoodItems{
                 itemsSelected = itemsSelected + i.getName() + ", "
             }
 
@@ -108,7 +140,7 @@ class SelectItemsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        foodItem = searchText.isEmpty ?  foodItem : foodItem!.filter{(food:FoodItems) -> Bool in
+        foodItem = searchText.isEmpty ?  foodItem : foodItem.filter{(food:FoodItems) -> Bool in
             return food.getName().range(of: searchText, options: .caseInsensitive, range:nil, locale:nil) != nil
         }
         

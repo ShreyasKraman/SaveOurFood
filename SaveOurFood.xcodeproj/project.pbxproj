@@ -17,6 +17,16 @@
 		E24111F921C3B091008E1108 /* food-small.png in Resources */ = {isa = PBXBuildFile; fileRef = E24111F721C3B08F008E1108 /* food-small.png */; };
 		E24111FA21C3B091008E1108 /* food-medium.png in Resources */ = {isa = PBXBuildFile; fileRef = E24111F821C3B08F008E1108 /* food-medium.png */; };
 		E24111FD21C3B188008E1108 /* ManageAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24111FC21C3B188008E1108 /* ManageAccountViewController.swift */; };
+		E24111FF21C3B319008E1108 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E24111FE21C3B319008E1108 /* GoogleService-Info.plist */; };
+		E241120121C3B69A008E1108 /* OrganizationAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241120021C3B69A008E1108 /* OrganizationAccount.swift */; };
+		E241120321C4252C008E1108 /* AddFoodItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241120221C4252C008E1108 /* AddFoodItemViewController.swift */; };
+		E241120521C437B1008E1108 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241120421C437B1008E1108 /* AddItemViewController.swift */; };
+		E241120821C44009008E1108 /* MemberLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241120721C44009008E1108 /* MemberLoginViewController.swift */; };
+		E241120A21C4420B008E1108 /* AdminTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241120921C4420B008E1108 /* AdminTabBarViewController.swift */; };
+		E241120C21C46680008E1108 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241120B21C46680008E1108 /* QRCodeViewController.swift */; };
+		E241120E21C47195008E1108 /* MemberRegisterationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241120D21C47195008E1108 /* MemberRegisterationViewController.swift */; };
+		E241121021C48D67008E1108 /* MemberRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241120F21C48D67008E1108 /* MemberRequestViewController.swift */; };
+		E241121221C4920B008E1108 /* MemberNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241121121C4920B008E1108 /* MemberNavigationController.swift */; };
 		E2AF90C321C0CCF9002BCC8A /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF90C221C0CCF9002BCC8A /* UserLoginViewController.swift */; };
 		E2AF90C921C0EA4F002BCC8A /* UserPlaceRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF90C821C0EA4F002BCC8A /* UserPlaceRequestViewController.swift */; };
 		E2AF90CB21C0ED9C002BCC8A /* UserAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF90CA21C0ED9C002BCC8A /* UserAnalyticsViewController.swift */; };
@@ -82,6 +92,16 @@
 		E24111F721C3B08F008E1108 /* food-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "food-small.png"; path = "../../../../../Downloads/Ingredients-24-48px/food-small.png"; sourceTree = "<group>"; };
 		E24111F821C3B08F008E1108 /* food-medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "food-medium.png"; path = "../../../../../Downloads/Ingredients-24-48px/food-medium.png"; sourceTree = "<group>"; };
 		E24111FC21C3B188008E1108 /* ManageAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageAccountViewController.swift; sourceTree = "<group>"; };
+		E24111FE21C3B319008E1108 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E241120021C3B69A008E1108 /* OrganizationAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationAccount.swift; sourceTree = "<group>"; };
+		E241120221C4252C008E1108 /* AddFoodItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodItemViewController.swift; sourceTree = "<group>"; };
+		E241120421C437B1008E1108 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		E241120721C44009008E1108 /* MemberLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberLoginViewController.swift; sourceTree = "<group>"; };
+		E241120921C4420B008E1108 /* AdminTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTabBarViewController.swift; sourceTree = "<group>"; };
+		E241120B21C46680008E1108 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		E241120D21C47195008E1108 /* MemberRegisterationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRegisterationViewController.swift; sourceTree = "<group>"; };
+		E241120F21C48D67008E1108 /* MemberRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRequestViewController.swift; sourceTree = "<group>"; };
+		E241121121C4920B008E1108 /* MemberNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberNavigationController.swift; sourceTree = "<group>"; };
 		E2AF90C221C0CCF9002BCC8A /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
 		E2AF90C821C0EA4F002BCC8A /* UserPlaceRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlaceRequestViewController.swift; sourceTree = "<group>"; };
 		E2AF90CA21C0ED9C002BCC8A /* UserAnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAnalyticsViewController.swift; sourceTree = "<group>"; };
@@ -163,8 +183,22 @@
 			isa = PBXGroup;
 			children = (
 				E24111FC21C3B188008E1108 /* ManageAccountViewController.swift */,
+				E241120221C4252C008E1108 /* AddFoodItemViewController.swift */,
+				E241120421C437B1008E1108 /* AddItemViewController.swift */,
+				E241120921C4420B008E1108 /* AdminTabBarViewController.swift */,
 			);
 			path = Admin;
+			sourceTree = "<group>";
+		};
+		E241120621C43FD2008E1108 /* Member */ = {
+			isa = PBXGroup;
+			children = (
+				E241120721C44009008E1108 /* MemberLoginViewController.swift */,
+				E241120D21C47195008E1108 /* MemberRegisterationViewController.swift */,
+				E241120F21C48D67008E1108 /* MemberRequestViewController.swift */,
+				E241121121C4920B008E1108 /* MemberNavigationController.swift */,
+			);
+			path = Member;
 			sourceTree = "<group>";
 		};
 		E2AF90C121C0CCCE002BCC8A /* UserLogin */ = {
@@ -221,6 +255,7 @@
 				E24111EF21C36C07008E1108 /* TabBarViewController.swift */,
 				E24111F121C36C32008E1108 /* NavigationViewController.swift */,
 				E24111F521C39D20008E1108 /* RequestDetailsView.swift */,
+				E241120B21C46680008E1108 /* QRCodeViewController.swift */,
 			);
 			path = UserPlaceRequest;
 			sourceTree = "<group>";
@@ -231,6 +266,7 @@
 				E2AF90E321C1D26C002BCC8A /* FoodItems.swift */,
 				E2AF910821C2D936002BCC8A /* User.swift */,
 				E24111F321C3906D008E1108 /* FoodItemRequest.swift */,
+				E241120021C3B69A008E1108 /* OrganizationAccount.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,6 +318,8 @@
 		E2C3DA7821BF875A0064648E /* SaveOurFood */ = {
 			isa = PBXGroup;
 			children = (
+				E241120621C43FD2008E1108 /* Member */,
+				E24111FE21C3B319008E1108 /* GoogleService-Info.plist */,
 				E24111FB21C3B171008E1108 /* Admin */,
 				E2AF90E521C1D3B5002BCC8A /* Assets */,
 				E2AF90E221C1D239002BCC8A /* Model */,
@@ -453,6 +491,7 @@
 				E2AF90EF21C1D4A5002BCC8A /* raw_poultry.jpeg in Resources */,
 				E2AF90FD21C1D955002BCC8A /* status-medium.png in Resources */,
 				E2AF90FE21C1D955002BCC8A /* status-small.png in Resources */,
+				E24111FF21C3B319008E1108 /* GoogleService-Info.plist in Resources */,
 				E2AF90F121C1D4A5002BCC8A /* cooked_poultry.jpg in Resources */,
 				E2AF90F921C1D94A002BCC8A /* analytics-medium.png in Resources */,
 			);
@@ -602,20 +641,29 @@
 			files = (
 				E24111F621C39D20008E1108 /* RequestDetailsView.swift in Sources */,
 				E2AF90C321C0CCF9002BCC8A /* UserLoginViewController.swift in Sources */,
+				E241120C21C46680008E1108 /* QRCodeViewController.swift in Sources */,
+				E241121221C4920B008E1108 /* MemberNavigationController.swift in Sources */,
 				E24111F221C36C32008E1108 /* NavigationViewController.swift in Sources */,
+				E241121021C48D67008E1108 /* MemberRequestViewController.swift in Sources */,
 				E24111FD21C3B188008E1108 /* ManageAccountViewController.swift in Sources */,
 				E2C3DA7C21BF875A0064648E /* ViewController.swift in Sources */,
 				E2AF90CB21C0ED9C002BCC8A /* UserAnalyticsViewController.swift in Sources */,
+				E241120821C44009008E1108 /* MemberLoginViewController.swift in Sources */,
 				E2AF90C921C0EA4F002BCC8A /* UserPlaceRequestViewController.swift in Sources */,
+				E241120A21C4420B008E1108 /* AdminTabBarViewController.swift in Sources */,
 				E24111F021C36C07008E1108 /* TabBarViewController.swift in Sources */,
+				E241120321C4252C008E1108 /* AddFoodItemViewController.swift in Sources */,
 				E24111F421C3906D008E1108 /* FoodItemRequest.swift in Sources */,
 				E2AF90E421C1D26C002BCC8A /* FoodItems.swift in Sources */,
 				E2AF90CD21C178EF002BCC8A /* UserStatusViewController.swift in Sources */,
 				E2AF90CF21C17941002BCC8A /* UserAccountsViewController.swift in Sources */,
 				E2AF910621C1DF4A002BCC8A /* ConfirmPickUpViewController.swift in Sources */,
+				E241120E21C47195008E1108 /* MemberRegisterationViewController.swift in Sources */,
+				E241120521C437B1008E1108 /* AddItemViewController.swift in Sources */,
 				E2C3DA7A21BF875A0064648E /* AppDelegate.swift in Sources */,
 				E2AF910421C1DDA2002BCC8A /* SelectItemsViewController.swift in Sources */,
 				E2AF910921C2D936002BCC8A /* User.swift in Sources */,
+				E241120121C3B69A008E1108 /* OrganizationAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
