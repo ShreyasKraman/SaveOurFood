@@ -52,6 +52,9 @@ class UserPlaceRequestViewController: UIViewController, UITableViewDataSource, U
         itemsTable.delegate = self
         itemsTable.dataSource = self
         
+//        itemsTable.rowHeight = UITableView.automaticDimension
+//        itemsTable.estimatedRowHeight = 205
+        
         let rightButtonItem = UIBarButtonItem.init(
             title: "+",
             style: .done,
@@ -65,7 +68,7 @@ class UserPlaceRequestViewController: UIViewController, UITableViewDataSource, U
         
         if email != nil{
             
-            let databaseReferrer = Database.database().reference().child("Users")
+            let databaseReferrer = Database.database().reference().child("Boston")
             
             databaseReferrer.observe(.value, with: {(snapshot) in
                 
@@ -91,23 +94,26 @@ class UserPlaceRequestViewController: UIViewController, UITableViewDataSource, U
                         let status = itemObject?["status"] as! String
                         
                         //Retreive image
-//                        let storageRef = Storage.storage().reference(forURL: imageUrl as! String)
-//
-//                        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) -> Void in
-//                            // Create a UIImage, add it to the array
-//                            let pic = UIImage(data: data!)
-//
-//
-                        let foodItems = FoodItemRequest(id: id, date: date, time: time, day: day, items: itemsName, image: UIImage(named:"raw_meat.jpeg")!,status: status, approver: "")
+                        let storageRef = Storage.storage().reference(forURL: imageUrl)
+                        var pic = UIImage(named:"cooked_veggies.jpg")
+                        storageRef.getData(maxSize: 5 * 1024 * 1024) { (data, error) -> Void in
+                            // Create a UIImage, add it to the array
+                            
+                            if data != nil{
+                                pic = UIImage(data: data!)
+                            }
+                        }
                         
-                            self.requestDetails.append(foodItems)
-//                        }
+                        let foodItems = FoodItemRequest(id: id, date: date, time: time, day: day, items: itemsName, image: pic!,status: status, approver: "")
+                        
+                        self.requestDetails.append(foodItems)
+                        DispatchQueue.main.async {
+                            self.itemsTable.reloadData()
+                        }
                         
                     }
                     
-                    DispatchQueue.main.async {
-                        self.itemsTable.reloadData()
-                    }
+                    
                     
                 }
                 
@@ -150,7 +156,7 @@ class UserPlaceRequestViewController: UIViewController, UITableViewDataSource, U
         
         if text.getStatus() == "Pending"{
             cell.statusLabel.text = "Awaiting pickup details"
-            cell.statusLabel.textColor = UIColor.yellow
+            cell.statusLabel.textColor = UIColor.red
         }else if text.getStatus() == "Pickup confirmed"{
             cell.statusLabel.text = "volunteer on his way"
             cell.statusLabel.textColor = UIColor.lightGray
@@ -179,7 +185,7 @@ class UserPlaceRequestViewController: UIViewController, UITableViewDataSource, U
             
             if requestItem.getStatus() == "Pending"{
                 requestedItem.statusText.text = "Awaiting pickup details"
-                requestedItem.statusText.textColor = UIColor.yellow
+                requestedItem.statusText.textColor = UIColor.lightGray
             }else if requestItem.getStatus() == "Pickup confirmed"{
                 requestedItem.statusText.text = "volunteer on his way"
                 requestedItem.statusText.textColor = UIColor.lightGray

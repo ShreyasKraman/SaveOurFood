@@ -55,6 +55,16 @@ class AddItemViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         var data = Data()
         
+        if itemName.text == nil || itemName.text == ""{
+            showErrorAlert(message: "Enter label for the image")
+            return
+        }
+        
+        if imageUpload.image == nil{
+            showErrorAlert(message: "Please upload image")
+            return
+        }
+        
         data = imageUpload.image!.pngData()!
         
         let storageRef = storage.reference()
@@ -65,9 +75,9 @@ class AddItemViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         _ = imageRef.putData(data, metadata: nil, completion: {(metadata,error) in
             
-            guard let metadata = metadata else{
-                return
-            }
+//            guard let metadata = metadata else{
+//                return
+//            }
             
             imageRef.downloadURL(completion: {(url, error) in
                 

@@ -120,6 +120,11 @@ class ConfirmPickUpViewController: UIViewController,UINavigationControllerDelega
         let emailId = UserDetails?.getEmail()
         let name = UserDetails?.getName()
         
+        if image == nil {
+            showErrorAlert(message: "Please upload image")
+            return
+        }
+        
         let date = Date()
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year,.month,.day,.second,.minute,.hour,.weekday], from: date)
@@ -135,100 +140,131 @@ class ConfirmPickUpViewController: UIViewController,UINavigationControllerDelega
             
             let key = self.databaseReferer!.childByAutoId().key
             
-//            let storage = Storage.storage()
-//
-//            var data = Data()
-//
-//            data = image!.pngData()!
-//
-//            let storageRef = storage.reference()
-//
-//            var imageRef = storageRef.child(emailId!+"/images/"+key!+".png")
+            let storage = Storage.storage()
+
+            var data = Data()
+
+//            data = image!.jpegData(compressionQuality: 1.0)!
+            
+            data = image!.pngData()!
+            
+            let storageRef = storage.reference()
+
+            var imageRef = storageRef.child(key!+".png")
 //
             var downloadURL = ""
             
-//            _ = imageRef.putData(data, metadata: nil, completion: {(metadata,error) in
-//
+            _ = imageRef.putData(data, metadata: nil, completion: {(metadata,error) in
+
 //                guard let metadata = metadata else{
 //                    return
 //                }
+
+                imageRef.downloadURL(completion: {(url, error) in
+
+                    guard let url = url else{
+                        self.showErrorAlert(message: "Could not get image url")
+                        return
+                    }
+
+                    downloadURL = url.absoluteString
+                    
+                    //let newKey = self.randomString(length: 13)
+                    
+                    let pickupData = [
+                        "id":key,
+                        "name":name,
+                        "data":itemsData,
+                        "emailId":emailId,
+                        "image":downloadURL,
+                        "date":requestDate,
+                        "time":requestTime,
+                        "day":day,
+                        "status":"Pending",
+                        "approver":""
+                        //                "lat":self.latitude!,
+                        //                "long":self.longiture!
+                    ]
+
+                    self.databaseReferer.child(key!).setValue(pickupData)
+
+                    self.databaseReferer = Database.database().reference().child("Users")
+                    
+                    let keyUser = self.databaseReferer!.childByAutoId().key
+                    
+                    
+                    let userRequestData = [
+                        "id":keyUser,
+                        "data":itemsData,
+                        "emailId":emailId,
+                        "image":downloadURL,
+                        "date":requestDate,
+                        "time":requestTime,
+                        "day":day,
+                        "status":"Pending"
+                    ]
+                    
+                    self.databaseReferer.child(keyUser!).setValue(userRequestData)
+                    
+                    let alert = UIAlertController(title: "Success", message: "Pickup request placed successfully!", preferredStyle:UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style:UIAlertAction.Style.destructive, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                })
+
+            })
+            
+//            //Insert user record in database
 //
-//                imageRef.downloadURL(completion: {(url, error) in
+//            let pickupData = [
+//                "id":key,
+//                "name":name,
+//                "data":itemsData,
+//                "emailId":emailId,
+//                "image":downloadURL,
+//                "date":requestDate,
+//                "time":requestTime,
+//                "day":day,
+//                "status":"Pending",
+//                "approver":""
+//                //                "lat":self.latitude!,
+//                //                "long":self.longiture!
+//            ]
 //
-//                    guard let url = url else{
-//                        self.showErrorAlert(message: "Could not get image url")
-//                        return
-//                    }
+//            self.databaseReferer.child(key!).setValue(pickupData)
 //
-//                    downloadURL = url.absoluteString
 //
-//                    let pickupData = [
-//                        "id":key,
-//                        "name":name,
-//                        "data":itemsData,
-//                        "emailId":emailId,
-//                        "image":downloadURL,
-//                        "date":requestDate,
-//                        "time":requestTime,
-//                        "day":day,
-//                        "status":"Pending",
-//                        "approver":""
-//                        //                "lat":self.latitude!,
-//                        //                "long":self.longiture!
-//                    ]
+//            databaseReferer = Database.database().reference().child("Users")
 //
-//                    self.databaseReferer.child(key!).setValue(pickupData)
+//            let keyUser = self.databaseReferer!.childByAutoId().key
 //
-//                })
 //
-//            })
-            
-            //Insert user record in database
-            
-            let pickupData = [
-                "id":key,
-                "name":name,
-                "data":itemsData,
-                "emailId":emailId,
-                "image":downloadURL,
-                "date":requestDate,
-                "time":requestTime,
-                "day":day,
-                "status":"Pending",
-                "approver":""
-                //                "lat":self.latitude!,
-                //                "long":self.longiture!
-            ]
-            
-            self.databaseReferer.child(key!).setValue(pickupData)
-            
-            
-            databaseReferer = Database.database().reference().child("Users")
-            
-            let keyUser = self.databaseReferer!.childByAutoId().key
-            
-            
-            let userRequestData = [
-                "id":keyUser,
-                "data":itemsData,
-                "emailId":emailId,
-                "image":downloadURL,
-                "date":requestDate,
-                "time":requestTime,
-                "day":day,
-                "status":"Pending"
-            ]
-            
-            self.databaseReferer.child(keyUser!).setValue(userRequestData)
-            
-            let alert = UIAlertController(title: "Success", message: "Pickup request placed successfully!", preferredStyle:UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style:UIAlertAction.Style.destructive, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+//            let userRequestData = [
+//                "id":keyUser,
+//                "data":itemsData,
+//                "emailId":emailId,
+//                "image":downloadURL,
+//                "date":requestDate,
+//                "time":requestTime,
+//                "day":day,
+//                "status":"Pending"
+//            ]
+//
+//            self.databaseReferer.child(keyUser!).setValue(userRequestData)
+//
+//            let alert = UIAlertController(title: "Success", message: "Pickup request placed successfully!", preferredStyle:UIAlertController.Style.alert)
+//            alert.addAction(UIAlertAction(title: "Ok", style:UIAlertAction.Style.destructive, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
             
         }else{
             showErrorAlert(message: "image, location are mandatory. Please upload the image or allow location access")
         }
         
+    }
+    
+    func randomString(length: Int) -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        return String((0...length-1).map{ _ in letters.randomElement()! })
     }
     /*
     // MARK: - Navigation

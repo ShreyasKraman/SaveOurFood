@@ -43,6 +43,15 @@ class UserLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
         
         UserPlaceRequest.userDetails = userDetails!
         
+        let navigate1 = tabbar!.viewControllers?[2] as! UINavigationController
+        let UserAccount = navigate1.viewControllers.first as! UserAccountsViewController
+        
+        UserAccount.view.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: self.view.frame.height)
+        
+        UserAccount.nameLabel.text = userDetails?.getName()
+        UserAccount.emailLabel.text = userDetails?.getEmail()
+        
+        
         self.present(tabbar!,animated: true,completion: nil)
         
     }
@@ -63,6 +72,9 @@ class UserLoginViewController: UIViewController, GIDSignInUIDelegate, GIDSignInD
     }
     
     
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     /*
     // MARK: - Navigation

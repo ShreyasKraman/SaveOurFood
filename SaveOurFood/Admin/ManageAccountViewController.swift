@@ -109,7 +109,13 @@ class ManageAccountViewController: UIViewController, UITableViewDelegate, UITabl
         
         cell.nameLabel.text = account.getName()
         
-        cell.statusLabel.text = account.getStatus()
+        if account.getStatus() == "0"{
+            cell.statusLabel.text = "Pending"
+            cell.statusLabel.textColor = UIColor.red
+        }else if account.getStatus() == "1"{
+            cell.statusLabel.text = "Approved"
+            cell.statusLabel.textColor = UIColor.green
+        }
         
         return cell
     }

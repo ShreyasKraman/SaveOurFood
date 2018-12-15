@@ -135,7 +135,7 @@ class SelectItemsViewController: UIViewController, UITableViewDelegate, UITableV
         
         confirmPickup.textData = itemsSelected
         confirmPickup.UserDetails = self.userDetails
-        
+    
         self.navigationController?.pushViewController(confirmPickup, animated: true)
     }
     

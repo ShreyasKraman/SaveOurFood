@@ -32,6 +32,7 @@
 		E241120E21C47195008E1108 /* MemberRegisterationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241120D21C47195008E1108 /* MemberRegisterationViewController.swift */; };
 		E241121021C48D67008E1108 /* MemberRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241120F21C48D67008E1108 /* MemberRequestViewController.swift */; };
 		E241121221C4920B008E1108 /* MemberNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E241121121C4920B008E1108 /* MemberNavigationController.swift */; };
+		E2428AC021C4C241003940A5 /* ScanQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2428ABF21C4C241003940A5 /* ScanQRViewController.swift */; };
 		E2AF90C321C0CCF9002BCC8A /* UserLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF90C221C0CCF9002BCC8A /* UserLoginViewController.swift */; };
 		E2AF90C921C0EA4F002BCC8A /* UserPlaceRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF90C821C0EA4F002BCC8A /* UserPlaceRequestViewController.swift */; };
 		E2AF90CB21C0ED9C002BCC8A /* UserAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AF90CA21C0ED9C002BCC8A /* UserAnalyticsViewController.swift */; };
@@ -112,6 +113,7 @@
 		E241120D21C47195008E1108 /* MemberRegisterationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRegisterationViewController.swift; sourceTree = "<group>"; };
 		E241120F21C48D67008E1108 /* MemberRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberRequestViewController.swift; sourceTree = "<group>"; };
 		E241121121C4920B008E1108 /* MemberNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberNavigationController.swift; sourceTree = "<group>"; };
+		E2428ABF21C4C241003940A5 /* ScanQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRViewController.swift; sourceTree = "<group>"; };
 		E2AF90C221C0CCF9002BCC8A /* UserLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginViewController.swift; sourceTree = "<group>"; };
 		E2AF90C821C0EA4F002BCC8A /* UserPlaceRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlaceRequestViewController.swift; sourceTree = "<group>"; };
 		E2AF90CA21C0ED9C002BCC8A /* UserAnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAnalyticsViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				E241121121C4920B008E1108 /* MemberNavigationController.swift */,
 				E2180BF721C4B2AC00389F77 /* MemberAccountViewController.swift */,
 				E2180BF921C4B74E00389F77 /* ApproveRequestViewController.swift */,
+				E2428ABF21C4C241003940A5 /* ScanQRViewController.swift */,
 			);
 			path = Member;
 			sourceTree = "<group>";
@@ -584,9 +587,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SaveOurFood/Pods-SaveOurFood-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -594,9 +601,13 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -660,6 +671,7 @@
 				E2AF90C321C0CCF9002BCC8A /* UserLoginViewController.swift in Sources */,
 				E241120C21C46680008E1108 /* QRCodeViewController.swift in Sources */,
 				E241121221C4920B008E1108 /* MemberNavigationController.swift in Sources */,
+				E2428AC021C4C241003940A5 /* ScanQRViewController.swift in Sources */,
 				E24111F221C36C32008E1108 /* NavigationViewController.swift in Sources */,
 				E241121021C48D67008E1108 /* MemberRequestViewController.swift in Sources */,
 				E24111FD21C3B188008E1108 /* ManageAccountViewController.swift in Sources */,

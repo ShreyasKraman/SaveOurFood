@@ -11,6 +11,8 @@ import GoogleSignIn
 
 class UserAccountsViewController: UIViewController {
 
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         

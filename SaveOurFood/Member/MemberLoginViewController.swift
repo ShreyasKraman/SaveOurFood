@@ -19,8 +19,17 @@ class MemberLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     @IBAction func loginAction(_ sender: Any) {
@@ -53,7 +62,7 @@ class MemberLoginViewController: UIViewController {
                 if snapshot.childrenCount > 0{
                     
                     let email = self.username!.text
-                    
+                    var flag = 0
                     for account in snapshot.children.allObjects as! [DataSnapshot]{
                         let accountObject = account.value as? [String:AnyObject]
                         
@@ -72,16 +81,20 @@ class MemberLoginViewController: UIViewController {
                                     address = accountObject?["address"] as! String
                                     phone = accountObject?["phone"] as! String
                                     zip = accountObject?["zip"] as! String
+                                    flag = 1
                                     break
                                 }
-                            }else{
-                                self.showErrorAlert(message: "Username or password is in valid")
                             }
                             
                         }
 
                     }
-                    let org = OrganizationAccount(id: id, name: name, address: address, phone: phone, zip: zip, certi: "", email: self.username.text!, password: "", status: "1", date: "")
+                    
+                    if(flag == 0){
+                        self.showErrorAlert(message: "Username password Invalid")
+                    }
+                    
+                    let org = OrganizationAccount(id: id, name: name, address: address, phone: phone, zip: zip, certi: "", email: self.username.text!, password: self.password.text!, status: "1", date: "")
                     
                     let tabbar = (self.storyboard!.instantiateViewController(withIdentifier: "ngoTabBar") as? UITabBarController)
                     
@@ -89,6 +102,10 @@ class MemberLoginViewController: UIViewController {
                     let memberRequest =  navigate.viewControllers.first as! MemberRequestViewController
                     
                     memberRequest.org = org
+                    
+                    let navigate1 = tabbar!.viewControllers?[1] as! UINavigationController
+                    let memberAccount =  navigate1.viewControllers.first as! MemberAccountViewController
+                    memberAccount.org = org
                     
                     self.present(tabbar!,animated: true)
                 
@@ -121,6 +138,11 @@ class MemberLoginViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
         
         
+    }
+    
+    
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     /*

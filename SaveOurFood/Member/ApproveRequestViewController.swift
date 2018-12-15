@@ -21,10 +21,24 @@ class ApproveRequestViewController: UIViewController {
     
     var requestDetails:FoodItemRequest?
     
+    @IBOutlet weak var approveButton: UIButton!
+    
+    @IBOutlet weak var scanQRButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if requestDetails?.getStatus() == "Pickup confirmed"{
+            scanQRButton.isEnabled = true
+            approveButton.isEnabled = false
+        }else if requestDetails?.getStatus() == "Delivered"{
+            scanQRButton.isEnabled = false
+            approveButton.isEnabled = false
+        }
     }
     
     @IBAction func approveRequest(_ sender: Any) {
@@ -41,6 +55,15 @@ class ApproveRequestViewController: UIViewController {
         
     }
     
+    @IBAction func VerifyPickUp(_ sender: Any) {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let scanQR = storyBoard.instantiateViewController(withIdentifier: "ScanQR") as! ScanQRViewController
+        
+        scanQR.id = requestDetails?.getRequestId()
+        self.navigationController?.pushViewController(scanQR, animated: true)
+        
+    }
     /*
     // MARK: - Navigation
 
